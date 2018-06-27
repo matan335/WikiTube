@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WikiTube</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+    <h2>
+        <div>Search!</div>
+        <br>
+        <form id="myForm" onsubmit="getSubmit();return false">
+            <input class="my-input" type="text" name="fname">
+            <input class="btn" type="submit" value="Submit">
+        </form>
+
+    </h2>
+
+    <div class="container">
+        <div class="videos-container"></div>
+        <div class="player-container hide"></div>
+
+    </div>
+
+    <div class="btn-reset-footer-container">
+        <button class="btn reset-footer" onclick="openModal()">Clear search history!</button>
+    </div>
+
+
+    <div id="myModal" class="modal hide">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-text">
+                <div>
+                    <p>Are you sure you want to clear history</p>
+                    <div class="btns-container">
+                        <button class="btn" onclick="clearHistory()">Confirm</button>
+                        <button class="btn btn-danger" onclick="closeModal()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/utilies.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
